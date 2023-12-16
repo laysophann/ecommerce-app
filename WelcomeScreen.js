@@ -1,19 +1,12 @@
-import {
-  ScrollView,
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  Pressable,
-} from "react-native";
+import { ScrollView, View, Text, StyleSheet, Image } from "react-native";
 
-export default function WelcomeScreen({ navigation }) {
+export default function WelcomeScreen() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerWrapper}>
         <Image
           style={styles.image}
-          source={require("./img/logo.png")}
+          source={require("./img/icon.png")}
           resizeMode="cover"
           accessible={true}
           accessibilityLabel={"Little Lemon Logo"}
@@ -26,12 +19,6 @@ export default function WelcomeScreen({ navigation }) {
         and classic cocktails in a lively but casual environment. We would love
         to hear your experience with us!
       </Text>
-      <Pressable
-        onPress={() => navigation.navigate("Menu")}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>View Menu</Text>
-      </Pressable>
     </ScrollView>
   );
 }
