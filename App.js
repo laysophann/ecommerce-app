@@ -1,23 +1,11 @@
-import * as React from "react";
-
-import WelcomeScreen from "./WelcomeScreen";
-import LoginScreen from "./LoginScreen";
-
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import RootNavigator from "./navigators/RootNavigator";
 
-const Drawer = createDrawerNavigator();
-
+// App.js is already setup by wrapping NavigationContainer around Root Navigator
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator
-        useLegacyImplementation
-        screenOptions={{ drawerPosition: "right" }}
-      >
-        <Drawer.Screen name="Welcome" component={WelcomeScreen} />
-        <Drawer.Screen name="Login" component={LoginScreen} />
-      </Drawer.Navigator>
+      <RootNavigator />
     </NavigationContainer>
   );
 }
